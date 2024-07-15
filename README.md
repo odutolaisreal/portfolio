@@ -4,14 +4,9 @@ That's "First portfolio" in French ✨
 
 ## Screenshot 📸
 
-![Israel Mitolu portfolio screenshot](./assets/img/seo-img.png)
+![Odutola Israel portfolio screenshot](./assets/img/Screenshot%20(62).png)
 
 ## Live Site 🚀
 
-[Preview the website here](https://israelmitolu.netlify.app).
+[Preview the website here](https://odutola-portfolio.vercel.app.netlify.app).
 
-## Tools 🔨
-
-Built using HTML, CSS(SCSS), Javascript and GSAP
-# portfolio
-# portfolio
