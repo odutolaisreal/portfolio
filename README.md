@@ -4,7 +4,7 @@ That's "First portfolio" in French ✨
 
 ## Screenshot 📸
 
-![Odutola Israel portfolio screenshot](./assets/img/Screenshot(62).png)
+![Odutola Israel portfolio screenshot](./assets/img/ Screenshot(62).png)
 
 ## Live Site 🚀
 
