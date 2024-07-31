@@ -1,0 +1,701 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title> </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="7318ce27-59b7-49dd-92a8-35a5308ace47" class="page sans"><header><img class="page-cover-image" src="Untitled%207318ce2759b749dd92a835a5308ace47/Screenshot_(62).png" style="object-position:center 44.879999999999995%"/><h1 class="page-title"> </h1><p class="page-description"></p></header><div class="page-body"><div id="664b97df-9bec-41ee-b9d0-9e492f6925e5" class="column-list"><div id="af86102a-0339-45fd-b31b-f9c570a5b9ab" style="width:18.75%" class="column"><figure id="cbab5a01-1726-43d9-beb8-1bd532d80151" class="image" style="text-align:left"><a href="Untitled%207318ce2759b749dd92a835a5308ace47/IMG_E0439.ico"><img style="width:163.3125px" src="Untitled%207318ce2759b749dd92a835a5308ace47/IMG_E0439.ico"/></a></figure><p id="d00b6ddf-be48-4097-b8e6-7f8c31a2ac54" class="">
+</p><h2 id="4a69125d-fe4f-4681-946b-505bf5c7d6a7" class="">Skills</h2><hr id="5dd472df-1117-4e1c-886f-e565e984d19e"/><ul id="3bc11085-5d4f-4d4d-91c7-005cfab52db8" class="bulleted-list"><li style="list-style-type:disc">HTML + CSS</li></ul><ul id="5968c253-c5fc-4df9-89d9-f6c6bb34cc9b" class="bulleted-list"><li style="list-style-type:disc">JavaScript</li></ul><ul id="0069c4d7-a499-4fbc-a5e1-af77812b3013" class="bulleted-list"><li style="list-style-type:disc">ReactJs + NextJs</li></ul><ul id="fbef4f44-1335-47eb-b72d-708eda2778e0" class="bulleted-list"><li style="list-style-type:disc">PHP</li></ul><ul id="7bf0f5cf-7c24-453d-b7e1-5769f7509afe" class="bulleted-list"><li style="list-style-type:disc">NodeJS</li></ul><ul id="8ae29954-332f-4853-83e4-c1966ee1fff5" class="bulleted-list"><li style="list-style-type:disc">Git +Github</li></ul><ul id="202d1a3b-ec79-412f-b1f1-f3036df95582" class="bulleted-list"><li style="list-style-type:disc">Figma</li></ul><p id="26eef1d4-835b-460d-be12-fb032a0ef54a" class="">
+</p><h2 id="3de219be-f803-47a2-9982-dcd82e839f5a" class="">Languages</h2><hr id="fb035d49-1c98-4a9e-be90-55f35cc2fbae"/><ul id="c36c0bc5-1537-413c-b6f4-4a6804e2f570" class="bulleted-list"><li style="list-style-type:disc">English </li></ul><ul id="18c7682a-c093-46ba-ba3f-98b75840f231" class="bulleted-list"><li style="list-style-type:disc">Yoruba</li></ul><p id="6dfef6ca-81c0-4ae6-a59a-53a7a880f57d" class="">
+</p><h2 id="90ef98a7-7107-4289-a395-61c7341d9d91" class="">Certifications</h2><hr id="5a7b6e4d-1e32-4057-8f0f-d95c7f459f25"/><ul id="50ac404d-62d1-4ae2-b9cc-800c5c63b606" class="bulleted-list"><li style="list-style-type:disc"><strong>Introduction Python<br/>Python<br/></strong><mark class="highlight-blue"><strong> </strong></mark><mark class="highlight-default"><strong>- 2024</strong></mark></li></ul><ul id="a704c777-56f5-4792-ace7-1589ad62a4df" class="bulleted-list"><li style="list-style-type:disc"><strong>Introduction to Frontend Development<br/><br/></strong><mark class="highlight-blue"><strong>Simplilearn </strong></mark><mark class="highlight-default"><strong>- 2024</strong></mark></li></ul><ul id="ee03f8e5-b1e7-44b7-90fc-93ba58197225" class="bulleted-list"><li style="list-style-type:disc"><strong>Full-Stack Development 101<br/><br/></strong><mark class="highlight-blue"><strong>Simplilearn </strong></mark><mark class="highlight-default"><strong>- 2024</strong></mark></li></ul><ul id="4465d122-0441-444f-9539-9795b2a02868" class="bulleted-list"><li style="list-style-type:disc"><strong>Advanced Javascript<br/><br/></strong><mark class="highlight-blue"><strong>Upgrad </strong></mark><mark class="highlight-default"><strong>- 2024</strong></mark></li></ul><ul id="69fb2841-0d97-4dd2-9c12-f01d6d97f543" class="bulleted-list"><li style="list-style-type:disc"><strong>Backend Development bootcamp<br/><br/></strong><mark class="highlight-blue"><strong>Fpro </strong></mark><mark class="highlight-default"><strong>- 2024</strong></mark></li></ul><ul id="d9d5d1ff-4d6c-495e-8a7d-25a64bb839bb" class="bulleted-list"><li style="list-style-type:disc"><strong>React 18 and Projects Course<br/><br/></strong><mark class="highlight-blue"><strong>freecodecamp </strong></mark><mark class="highlight-default"><strong>- 2023</strong></mark></li></ul><ul id="c993f84d-31cf-4663-83c5-7dcb5a3a9ffb" class="bulleted-list"><li style="list-style-type:disc"><strong>Frontend development bootcamp<br/><br/></strong><mark class="highlight-blue"><strong>SSETH </strong></mark><mark class="highlight-default"><strong>- 2023</strong></mark></li></ul><p id="82d5ce7c-c10f-48da-a91d-2854af33c2bf" class="">
+</p><h2 id="1e718774-fb15-4142-8848-ccbc437aed0a" class="">Interests</h2><hr id="b5f65785-8c02-4cdc-8a0e-9a2a9d2d25cc"/><p id="29ef56ee-0467-4f57-b33d-51431dc70d3e" class="">💻 Development</p><p id="75c0a749-b0d1-4952-bce0-81d1e611e19e" class="">💼 Entrepreneurship</p><p id="131a9a02-1913-4bfa-b647-c8d6efdef518" class="">📖 Exploring self-help books</p><p id="bd03b943-7a39-4614-b85e-adbee5be9882" class="">
+</p><p id="0e1910f7-a0f8-4c2c-bd33-936c25b0e318" class="">
+</p></div><div id="0fb2c231-d905-4dc1-93ef-436d3a623eb2" style="width:81.25%" class="column"><figure id="583312de-0dfd-4b6f-a620-5552ccf4350a" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="2.488em"><mrow><mtext mathvariant="bold">Odutola</mtext><mtext> </mtext><mtext mathvariant="bold">Israel</mtext></mrow><mspace linebreak="newline"></mspace><mstyle mathsize="0.9em"><mi>W</mi><mi>e</mi><mi>b</mi><mo>−</mo><mi>D</mi><mi>e</mi><mi>v</mi><mi>e</mi><mi>l</mi><mi>o</mi><mi>p</mi><mi>e</mi><mi>r</mi></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Huge \textbf {Odutola Israel} \\
+\small Web-Developer</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.7278em;"></span><span class="mord text sizing reset-size6 size11"><span class="mord textbf">Odutola Israel</span></span></span><span class="mspace newline sizing reset-size6 size11"></span><span class="base"><span class="strut" style="height:0.7em;vertical-align:-0.075em;"></span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.13889em;">W</span><span class="mord mathnormal sizing reset-size6 size5">e</span><span class="mord mathnormal sizing reset-size6 size5">b</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin sizing reset-size6 size5">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8em;vertical-align:-0.175em;"></span><span class="mord mathnormal sizing reset-size6 size5">De</span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.03588em;">v</span><span class="mord mathnormal sizing reset-size6 size5">e</span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.01968em;">l</span><span class="mord mathnormal sizing reset-size6 size5">o</span><span class="mord mathnormal sizing reset-size6 size5">p</span><span class="mord mathnormal sizing reset-size6 size5" style="margin-right:0.02778em;">er</span></span></span></span></span></div></figure><p id="479793f2-ca6d-4872-9621-3d1e6d2cee78" class="">
+</p><div id="dabd28d6-929f-4054-b109-0681a872534b" class="column-list"><div id="e370ecb9-5b42-45bc-888f-65c930da9097" style="width:45.83333333333333%" class="column"><p id="113db2ed-42c0-4956-8ab7-b6853b006fc1" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="536f443f-9bfc-4d05-b856-6c24200d2831"><div style="font-size:1.5em"><span class="icon">🌐</span></div><div style="width:100%"><a href="https://www.yourwebsite.com">o</a>dutola-portfolio.vercel.app</div></figure><p id="f7b0bd50-9ac5-490c-a99d-bbf9e8549c7d" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="a1b05e6e-5b11-4048-bbcf-353fe6a5ec37"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/invitation_lightgray.svg"/></div><div style="width:100%"><a href="https://www.yourwebsite.com">o</a>dutolaisreal11@gmail.com</div></figure></div><div id="d0c464fb-392d-4fce-98f7-92900a7eb8b8" style="width:50.00000000000016%" class="column"><p id="1984efb3-01c5-4037-bec7-d44e83ad3985" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="097fa14e-a745-40d3-9c7e-7646299ec70f"><div style="font-size:1.5em"><img class="icon" src="Untitled%207318ce2759b749dd92a835a5308ace47/github.png"/></div><div style="width:100%">https://github.com/odutolaisreal</div></figure><p id="53bcd031-5624-4040-9b60-3c48340add07" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0cf6405d-6f6c-4c41-b9fa-bbbe625ea9f6"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/phone-speaker_red.svg"/></div><div style="width:100%">+234 706 0529 706</div></figure></div><div id="6350cb3f-004b-4a8e-9d62-1234580e4af9" style="width:4.166666666666666%" class="column"><p id="844bb750-8d39-4010-9d4d-facc2d3b147e" class="">
+</p></div></div><h3 id="6e4b5555-2a64-4e31-adff-ed3303adaca7" class="">Profile</h3><hr id="b8a915d7-fdf3-42c0-8451-430459206667"/><blockquote id="249224a6-bf6b-4c11-a769-a764e3baeda3" class="">Hello there, I&#x27;m Odutola Israel - a Full-Stack web-developer with a passion for creating digital experiences that are both beautiful and accessible. My mission is to build websites and applications that delight users, while also making them easy to use and navigate for everyone.<p id="e283d10e-ded0-443e-9fab-83c882b7df26" class="">With years of experience in Full-Stack development, I specialize in creating responsive, user-friendly interfaces using Both Front-End and Back-End Languages. I pay close attention to detail, always striving to make sure that every interaction is smooth, intuitive, and visually appealing. I&#x27;m also a strong advocate for web accessibility, ensuring that all my projects are accessible to all.</p></blockquote><p id="7c0d4a9b-1b7c-4735-b192-c14014d0cedc" class="">
+</p><h3 id="369f842e-bff7-49ed-9480-ad447bf8547f" class="">Work Experience</h3><hr id="5d186fdc-4643-43d2-81e3-69d655e5f281"/><div id="5f915c4f-199a-431d-99c7-d674bd8d523d" class="column-list"><div id="68239e00-4858-4fee-a483-44a7456b3545" style="width:12.5%" class="column"><p id="f9e2c08c-b890-4ab2-850c-148c5a574e9d" class=""><strong>Sep 2023 - Dec 2023</strong></p></div><div id="247dd01d-4648-47ec-9db1-121ad06ef044" style="width:87.5%" class="column"><p id="f829cc11-607f-47bb-8f2a-25af2e7a194d" class=""><strong>Frontend Developer</strong> - <mark class="highlight-blue">Standard Success Tech Hub</mark></p><ul id="7675d186-5d73-4210-bf0f-1a90f34626c0" class="bulleted-list"><li style="list-style-type:disc">Coded using Html5, Bootstrap and TailwindCSS to develop features for both mobile and desktop platforms.</li></ul><ul id="83506738-5634-4bfc-b560-c7cbfadda0ff" class="bulleted-list"><li style="list-style-type:disc">Designed and updated layouts to meet usability and performance requirements.</li></ul><ul id="c3c919e6-308c-4500-8c33-7c7cc16a7e2a" class="bulleted-list"><li style="list-style-type:disc">Worked with product designers, backend developers, and the whole team to develop projects and Assignment</li></ul><ul id="14bd642b-e147-4604-b16f-1af4c041789d" class="bulleted-list"><li style="list-style-type:disc">Adhered to best practices while building each task and Assignment</li></ul><ul id="a3d2c6e7-71f0-4ead-8843-10a92c74cfca" class="bulleted-list"><li style="list-style-type:disc">Worked with Editors to fine-tune articles written, which improved my personal editing skills.</li></ul></div></div><div id="27fa6810-6eec-4dfc-bc2b-829f1eb22623" class="column-list"><div id="215eb34a-aa18-4b37-8b6a-68f4acfccca6" style="width:12.5%" class="column"><p id="0c0f9011-27af-481c-85c6-4d952a685e09" class=""><strong>Dec 2023 - Feb 2024</strong></p><p id="d9ce4190-4ee6-40eb-9e7a-e8994f7e2df5" class="">
+</p></div><div id="09a49326-867e-41ec-b8f9-e8a23b89bcfb" style="width:87.5%" class="column"><p id="cb99b387-4419-41d7-9e86-36e6a7fa1b60" class=""><strong>BackEnd Developer</strong> - <mark class="highlight-blue">Fpro Computer College</mark></p><p id="3e91f863-b2d7-431f-9ceb-9ab2c4fb4416" class="">
+</p><p id="c2b43cac-c888-436c-bb30-d0ad2de9fd9a" class="">
+</p><ul id="1d3810a6-1a3c-47cc-8831-1a4efd3075d5" class="bulleted-list"><li style="list-style-type:disc">Built a web server and make it internet-accessible using frameworks like React, JavaScript, Jquery.</li></ul><ul id="2ac52939-1648-4cb7-8b50-b541978b3d03" class="bulleted-list"><li style="list-style-type:disc">Understand encryption, basic PCI requirements</li></ul><ul id="4b1123a3-f9ed-4764-a1e3-440f0948c1e5" class="bulleted-list"><li style="list-style-type:disc">Use POST/PUT calls to update the database and GET calls to return data</li></ul><ul id="1c5b76e4-ed5d-4a03-ae41-0967a2c0fddf" class="bulleted-list"><li style="list-style-type:disc">Followed company policies and editorial guidelines to craft thorough, well-written content.</li></ul><ul id="a3d904fc-2860-4c58-88af-27f733ec4a39" class="bulleted-list"><li style="list-style-type:disc">Well Encrypted Database System</li></ul></div></div><div id="7a0a324b-460b-4f72-bc74-498ad14fef7c" class="column-list"><div id="1c1774f7-c409-473f-a329-1a423aac94b3" style="width:12.5%" class="column"><p id="ee10c400-da10-4f4a-aebc-061144f0de50" class=""><strong>Mar 2024 </strong></p><p id="aed93b54-5010-4ac1-b29f-cfc71760e375" class="">
+</p></div><div id="dcfe3f67-92b2-408d-be2e-358a92f0f1b7" style="width:87.5%" class="column"><p id="983e7308-4100-4837-afb6-74dc1f59d3ec" class=""><strong>Learnt React</strong>- <mark class="highlight-blue">FreecodeCamp</mark></p><p id="85997550-db86-41d3-82dc-347ae40ac475" class="">In FreeCodeCamp&#x27;s React curriculum, I learned how to build modular web applications using components, manage state and props for data flow, handle events and forms efficiently, utilize lifecycle methods, integrate React Router for navigation, fetch data from APIs, implement React Hooks for functional components, and test applications for reliability using Jest and React Testing Library.</p></div></div><div id="d5c32364-0f16-41ca-aa1c-43425b226e62" class="column-list"><div id="b79a2466-c0cd-4d53-a8ae-0aaead2288d9" style="width:12.5%" class="column"><p id="c534a3d5-a432-44cc-9c84-d87f9d5eca51" class=""><strong>Mar 2024 -</strong></p><p id="63b6fce1-6699-4851-a113-9734a90866a0" class="">Present</p><p id="adce06c4-84a7-4643-b27f-8a1147a10991" class="">
+</p></div><div id="83707d79-21e5-4664-83b0-026ea64d408b" style="width:87.5%" class="column"><p id="a01b866c-c3f5-476c-80e1-48e9f3340cbf" class=""><strong>Freelance Web Developer </strong>- <mark class="highlight-blue">Fiverr</mark></p><ul id="83e35db2-4fca-4f2d-8afd-1c977cd90c92" class="bulleted-list"><li style="list-style-type:disc">Designed front-end applications, and user interactive (UI) web pages using web technologies like HTML5, CSS3, Javascript, and Bootstrap4.</li></ul><ul id="f36dc352-8a6b-436d-a824-67e532e5ef9f" class="bulleted-list"><li style="list-style-type:disc">Edited HTML/CSS/JavaScript and plugins via WordPress/WPengine, and fixed bugs with existing Shopify websites</li></ul><ul id="351db017-e63f-4320-ada9-b161b5f44dde" class="bulleted-list"><li style="list-style-type:disc">Increased traffic and enhanced page ranking by improving website structure, performing Search Engine Optimization (SEO) and Search Engine Marketing (SEM) for local improvements.</li></ul></div></div><div id="3b85d973-8b06-4099-bfb0-586387fcfe43" class="column-list"><div id="5fe09473-6a82-4b8c-87f0-a394e88959eb" style="width:12.5%" class="column"><p id="0628516a-efa9-46d9-b256-c4b35fc2745a" class=""><strong>Jul 2024 </strong></p></div><div id="1109c6c8-d33e-4d47-a2ab-a13532d578b5" style="width:87.5%" class="column"><p id="e349eae0-0997-4282-b99b-8ad789b6537d" class=""><strong>Advanced Javascript Developer </strong>- <mark class="highlight-blue">Upgrad</mark></p><ul id="b58360b0-dc15-477b-8831-7eebcfb19f85" class="bulleted-list"><li style="list-style-type:disc">Learnt Advanced JavaScript Concepts around  client-side functioning, versions of language and async</li></ul></div></div><div id="d26a460f-0110-448c-a618-6463e1a0fa69" class="column-list"><div id="76d3e402-44bf-443a-b12d-30919ac21812" style="width:12.5%" class="column"><p id="929fe192-6ddb-40ae-a6ef-c9affbd294bc" class=""><strong>Jul 2024 </strong></p><p id="38053264-4eeb-47de-9df8-c98934bc3d14" class="">
+</p></div><div id="646fe342-43fd-4fce-b398-869abeae1434" style="width:87.5%" class="column"><p id="35538051-5c46-4cf7-85d4-0088ebd94981" class=""><strong>Full-Stack Development 101 </strong>- <mark class="highlight-blue">Simplilearn</mark></p><ul id="1ad00024-f630-424b-8ae1-36d1f64dc79f" class="bulleted-list"><li style="list-style-type:disc"><strong>Front-End Development:</strong> Learnt the essentials of front-end web development, including HTML, CSS, and JavaScript. Explored responsive design to create user-friendly and visually appealing interfaces.</li></ul><p id="0d6ccdd6-6e48-451e-8652-6c4f5a8de55f" class="">
+</p><ul id="5ad39b41-890d-4a1b-9417-a8c1d0efeabd" class="bulleted-list"><li style="list-style-type:disc"><strong>Back-End Development: </strong>Dived into server-side scripting, databases, and API integration. Discovering how to manage data, interact with servers, and build the functional backbone of web applications.</li></ul><ul id="0e259c29-49fe-4d49-a8a7-71319bd53b24" class="bulleted-list"><li style="list-style-type:disc"><strong>Problem Solving: </strong>Developed critical problem-solving skills essential for full-stack developers. Gained insights into troubleshooting, debugging, and efficient coding practices to create robust web applications.</li></ul></div></div><div id="f5c935af-663d-413a-a140-830e71a12662" class="column-list"><div id="c26fc022-b60d-4657-94ef-6ea80bb84a9c" style="width:12.5%" class="column"><p id="e690afb3-ee61-4d70-aecb-5ef8a1ca9363" class=""><strong>Jul 2024 </strong></p><p id="8c9f811f-0360-4baf-bdfa-e0d8d5c3f08a" class="">
+</p></div><div id="c54a70f8-867a-4d75-8c4c-dbd532129486" style="width:87.5%" class="column"><p id="bd279ab2-28cf-481d-8c7c-2a09c6ece6c6" class=""><strong>Introduction To Python </strong>- <mark class="highlight-blue">Microsoft</mark></p><ul id="89868c5b-81eb-4ed1-a127-87d02599c3cd" class="bulleted-list"><li style="list-style-type:disc">Learnt how to write a few lines of Python code, declare variables, and work with console input and output</li></ul><ul id="77825903-befb-4d67-92c3-683fd0970af9" class="bulleted-list"><li style="list-style-type:disc">Explored the choices available to run Python apps</li></ul><ul id="f1573b1b-f9f2-4bf7-b19b-f253f08add9e" class="bulleted-list"><li style="list-style-type:disc">Used the Python interpreter to execute statements and scripts</li></ul><ul id="1588227a-ab88-4a5a-bbae-567eacf62f2e" class="bulleted-list"><li style="list-style-type:disc">Learnt how to declare variables</li></ul><ul id="a4a53a23-785d-4171-835f-0c775da9bccd" class="bulleted-list"><li style="list-style-type:disc">Built a simple Python app that takes input and produces output</li></ul><p id="2f1ff11b-9097-433c-9a04-c8e06ef51bac" class="">
+</p></div></div></div></div><p id="a9f98ef6-50fa-4135-8570-1c501c167e7c" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
